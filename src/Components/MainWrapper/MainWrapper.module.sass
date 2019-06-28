@@ -1,0 +1,27 @@
+.MainWrapper
+  display: block
+  z-index: 100
+  // background-color: red
+  max-width: 1200px
+  margin: 50px auto
+  height: calc(100vh - 100px)
+  opacity: 1
+  transition-property: all
+  transition-duration: 0.5s
+  
+.Hide
+  opacity: 0
+
+@media only screen and (min-width: 1000px) and (max-width: 1300px) 
+  .MainWrapper
+    max-width: 900px
+
+@media only screen and (min-width: 700px) and (max-width: 1000px) 
+  .MainWrapper
+    max-width: 600px
+
+@media only screen and (min-width: 500px) and (max-width: 600px) 
+  .MainWrapper
+    width: 100%
+    margin: 0
+    height: 100vh

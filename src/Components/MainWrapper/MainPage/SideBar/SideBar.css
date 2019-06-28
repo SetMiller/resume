@@ -1,0 +1,5 @@
+.SideBar {
+  /* background: rgb(90, 113, 214); */
+  grid-area: SideBar;
+  border-right: 1px solid #ededed
+}
