@@ -1,10 +1,11 @@
 import React from 'react'
 import './SideBar.css'
+import Navigation from './Navigation/Navigation'
 
 const SideBar = () => {
   return (
     <div className="SideBar">
-      123
+      <Navigation />
     </div>
   )
 }

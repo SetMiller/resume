@@ -8,11 +8,11 @@ const App = props => {
 
   const timeDelay = 1000
   const [showGreet, setShowGreet] = useState(true)
-  const [greetTimeDelay] = useState(timeDelay * 7) // 6.3
+  const [greetTimeDelay] = useState(timeDelay * 7) // 7
   const [showBG, setShowBG] = useState(false)
   const [bgTimeDelay] = useState(timeDelay * 7.2) // 7.2
   const [showMW, setShowMW] = useState(false)
-  const [mWTimeDelay] = useState(timeDelay * 8) // 8
+  const [mWTimeDelay] = useState(timeDelay * 1) // 8
   
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const App = props => {
   return (
 
     <div className="App">
-      {!showBG ? <Greeting show={showGreet}/> : null}
-      <Background show={showBG}/>
+      {/* {!showBG ? <Greeting show={showGreet}/> : null}
+      <Background show={showBG}/> */}
       <MainWrapper show={showMW}/>
     </div>
   )

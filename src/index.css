@@ -21,11 +21,11 @@ body {
   /* background-color: #eee; */
 }
 
-/* a {
+a {
   text-decoration: none;
   outline: 0
-} */
-/* 
+}
+
 h1,
 h2,
 h3,
@@ -274,4 +274,4 @@ textarea.error:-ms-input-placeholder {
 input.error::-webkit-input-placeholder,
 textarea.error::-webkit-input-placeholder {
   color: red
-} */
+}
