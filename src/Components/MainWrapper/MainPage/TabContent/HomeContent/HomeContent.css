@@ -1,0 +1,27 @@
+.Content {
+  height: 100%;
+  overflow: hidden;
+  /* opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.5s; */
+  padding: 20px;
+  text-align: justify;
+  background-color: rgb(189, 221, 137);
+}
+
+
+.Home-enter {
+  opacity: 0;
+}
+.Home-enter-active {
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+}
+.Home-exit {
+  opacity: 1;
+}
+.Home-exit-active {
+  opacity: 0;
+  /* transform: scale(0.9); */
+  transition: opacity 300ms, transform 300ms;
+}

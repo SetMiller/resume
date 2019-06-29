@@ -1,4 +1,4 @@
 .TabContent {
   grid-area: TabContent;
-  /* background-color: green; */
+  overflow: hidden;
 }

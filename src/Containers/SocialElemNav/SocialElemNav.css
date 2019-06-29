@@ -1,0 +1,27 @@
+.social {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+
+.social a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.social a:last-child {
+  margin-bottom: 0;
+}
+
+.social a svg {
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.social a svg:hover {
+  transform: scale(1.4);
+  transition: all 0.3s ease-in-out;
+}
+
+

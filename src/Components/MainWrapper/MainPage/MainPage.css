@@ -10,5 +10,6 @@
   grid-template-areas: "SideBar TabContent";
   grid-template-columns: 80px 4fr;
   grid-template-rows: 1fr;
+  /* overflow: hidden; */
   /* grid-gap: 5px */
 }

@@ -4,9 +4,6 @@ import { faHome, faAddressCard, faBook, faComments, faDesktop } from "@fortaweso
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 
 const NavLiElem = (props) => {
-  console.log('props', props)
-  
-  
   let icon = null
   switch (props.iconName) {
     case 'home':
@@ -28,15 +25,12 @@ const NavLiElem = (props) => {
       icon = null
       break
   }
-  // console.log('icon', icon)
 
   return (
     <React.Fragment >
       <li className={props.active ? "active" : null} onClick={props.click}>
         <a href="#">
           {icon}
-          {/* <i className={props.iconName}></i> */}
-          {/* <FontAwesomeIcon icon={} /> */}
         </a>
       </li>
     </React.Fragment>
@@ -45,11 +39,3 @@ const NavLiElem = (props) => {
 
 export default React.memo( NavLiElem, (prevProps, nextProps) => 
         nextProps.active === prevProps.active)
-
-
-// React.memo(
-//       Modal, 
-//       (prevProps, nextProps) => 
-//         nextProps.show === prevProps.show && 
-//         nextProps.children === prevProps.children
-//     )
