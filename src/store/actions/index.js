@@ -1,3 +1,0 @@
-export {
-  activeElementHandler,
-} from './sideBar'

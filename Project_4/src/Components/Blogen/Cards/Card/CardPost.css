@@ -1,0 +1,10 @@
+.CardPost {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 2s;
+}
+  
+
+.CardPostHide {
+  opacity: 0
+}

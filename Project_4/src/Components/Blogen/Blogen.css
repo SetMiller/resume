@@ -1,0 +1,32 @@
+.dropdown a {
+  color: rgba(255,255,255,.5);
+}
+
+.dropdown a:active {
+  color: #fff
+}
+
+.dropdown a:hover {
+  color: rgba(255,255,255,.75);
+}
+
+.dropdown-menu a {
+  color: rgba(0,0,0,.65);
+}
+
+.dropdown-menu a:active {
+  color: #000
+}
+
+.dropdown-menu a:hover {
+  color: rgba(0,0,0,1);
+}
+
+
+
+.footer {
+  background: #343a40;
+  padding: 3rem;
+  color: #fff;
+
+}
