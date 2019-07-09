@@ -14,11 +14,6 @@ https://resume-cards.firebaseapp.com/login
 * install redux:
  * npm i --save redux react-redux
 
-* install material-ui
-  * npm install @material-ui/core
-  * npm install @material-ui/icons
-* material-ui fonts
-  * <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 * install bootstrap
   * npm install react-bootstrap bootstrap
 
