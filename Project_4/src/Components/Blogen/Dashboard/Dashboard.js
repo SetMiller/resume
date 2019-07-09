@@ -2,11 +2,11 @@ import React from 'react'
 import BadgeText from '../../UI/BadgeText/BadgeText'
 
 // Bootstrap
-import { Alert, Container, Col, Row, Button, Badge } from 'react-bootstrap'
+import { Alert, Container, Col, Row, Badge } from 'react-bootstrap'
 
-// Font-awesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+// // Font-awesome
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+// import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 // Redux
 import { connect } from 'react-redux'
@@ -21,24 +21,53 @@ const Dashboard = ( props ) => {
   return (
     <section className="Dashboard">
       <Container>
-        <Row>
-          <Col lg={8}>
-            <Alert variant="success" style={{margin: '1rem'}}>
-              <Alert.Heading> Перечень того, что было использовано при разработке этого приложения</Alert.Heading>
+        <Row className="justify-content-sm-center">
+          <Col xs lg={10}>
+            <Alert variant="success" style={{marginTop: '1rem'}}>
+              <Alert.Heading> Что использовано при разработке этого приложения:</Alert.Heading>
               <hr />
-                {badge}
+              <Row>
+                <Col md={6}>
+                  {badge}
+                </Col>
+                <Col md={6}>
+                  <Alert variant="danger">
+                    <Alert.Heading> Исходный код</Alert.Heading>
+                    <p>
+                      <br/>
+                      <Alert.Link href="https://github.com/SetMiller/resume/tree/master/Project_4">
+                        <Badge variant="secondary"> github <br/></Badge>
+                      </Alert.Link>
+                    </p>
+                  </Alert>
+                </Col>
+              </Row>
             </Alert>
           </Col>
-          <Col lg={4} >
-            <Alert variant="primary" style={{margin: '1rem'}}>
-              <Alert.Heading>Add Cards</Alert.Heading>
-              <p>
-                Здесь можно добавить новую карточку
-              </p>
+        </Row>
+        <Row className="justify-content-sm-center">
+          <Col lg={10}>
+            <Alert variant="primary" style={{marginTop: '1rem'}}>
+              <Alert.Heading>Что в настоящее время реализовано:</Alert.Heading>
               <hr />
-              <Button variant="primary" size="lg" block onClick={props.onShowModalHandler}>
-                <FontAwesomeIcon icon={faPlus}/> Add new card
-              </Button>
+              <p>
+                <Badge variant="secondary">1.<br/></Badge> Авторизация: <br/>
+                <Badge variant="secondary">1.1<br/></Badge> Валидация вводимой информации <br/>
+                <Badge variant="secondary">1.2<br/></Badge> Авторизация новых и зарегистрированных пользователей <br/>
+                <Badge variant="secondary">1.3<br/></Badge> Получение и хранение в localStorage данных авторизованного пользователя <br/>
+                <Badge variant="secondary">1.4<br/></Badge> Переадресация на стартовую страницу после авторизации <br/>
+                <Badge variant="secondary">1.5<br/></Badge> Отсутсвие доступа без авторизации <br/>
+                <Badge variant="secondary">1.6<br/></Badge> Срок хранения авторизационных данных пользователя ~ 4мин <br/>
+                <Badge variant="secondary">1.7<br/></Badge> Возможность logout, что сбрасывает авторизацию <br/>
+                <Badge variant="secondary">1.7<br/></Badge> Спиннер при ожидании ответа от сервера <br/>
+                {/* <hr /> */}
+                <Badge variant="secondary">2.<br/></Badge> Карточки: <br/>
+                <Badge variant="secondary">2.1<br/></Badge> Спиннер при ожидании ответа от сервера <br/>
+                <Badge variant="secondary">2.2<br/></Badge> Получение данных с сервера при открытии страницы <br/>
+                <Badge variant="secondary">2.3<br/></Badge> Отправка через модальное окно данных на сервер <br/>
+                <Badge variant="secondary">2.4<br/></Badge> Обновление информации при отправке формы <br/>
+              </p>
+              {/* <hr /> */}
             </Alert>
           </Col>
         </Row>

@@ -41,39 +41,33 @@ class Cards extends React.Component {
 
     return (
       <section className="Cards">
-        {/* {this.props.modalReducer.loading ? <Redirect to="/cards"/> : null} */}
         <Container>
-          <Row>
-            <Col md={8}>
-              <Alert variant="success">
-                <Alert.Heading>Hey, nice to see you</Alert.Heading>
+          <Row className="justify-content-center">
+            <Col md={10} lg={7}>
+              <Alert variant="success" style={{
+                  marginTop: '1rem', 
+                  marginBottom: '0rem'
+                }}>
+                <Alert.Heading>Работа с карточками</Alert.Heading>
                 <p>
-                  Aww yeah, you successfully read this important alert message. This example
-                  text is going to run a bit longer so that you can see how spacing within an
-                  alert works with this kind of content.
-                </p>
-                <hr />
-                <p className="mb-0">
-                  Авторизационный токен
-                  
+                  Здесь реализована простая отправка карточки на сервер при условии наличия авторизации пользователя. Так же моментальное отображение изменения при отправке карточки
                 </p>
               </Alert>
             </Col>
-            <Col md={4}>
-              <Alert variant="primary" style={{margin: '1rem'}}>
+            <Col md={6} lg={5}>
+              <Alert variant="primary" style={{marginTop: '1rem', marginBottom: '0rem'}}>
                 <Alert.Heading>Add Cards</Alert.Heading>
                 <p>
                   Здесь можно добавить новую карточку
                 </p>
-                <hr />
                 <Button variant="primary" size="lg" block onClick={this.props.onShowModalHandler}>
                   <FontAwesomeIcon icon={faPlus}/> Add new card
                 </Button>
               </Alert>
             </Col>
           </Row>
-          <Row className="justify-content-center">
-            {cardsToRender} 
+          <Row className="justify-content-center" style={{margin: '0.75rem 0rem'}}>
+            {cardsToRender}   
           </Row>
         </Container>
       </section>
@@ -82,7 +76,6 @@ class Cards extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('state', state)
    return {
       cardsReducer: state.cards,
       modalReducer: state.modal,

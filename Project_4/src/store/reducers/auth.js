@@ -7,7 +7,10 @@ const initState = {
     error: null,
     token: null,
     userId: null,
+    time: null,
 }
+
+
 
 const authStartHandler = ( state, action ) => {
   return updateObject(state, { 

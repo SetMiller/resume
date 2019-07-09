@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 // Bootstrap
-import { Container, Alert, Button, Col, Row, Form} from 'react-bootstrap';
+import { Container, Alert, Button, Col, Row, Form, Badge} from 'react-bootstrap';
 
 // Redux
 import { connect } from 'react-redux'
@@ -12,12 +12,6 @@ import Spinner from '../../UI/Spinner/Spinner'
 
 
 const Login = ( props ) => {
-
-  const redirectToTarget = () => {
-    props.onIsAuthOffHandler()
-    // FIXME: проверить редирект взависимости от наличия токена
-    props.history.push(`/`)
-  }
   
   const submitHandler = ( event ) => {
     event.preventDefault()
@@ -25,7 +19,6 @@ const Login = ( props ) => {
     const password = props.login.password.value
     const isSignin = props.loginSignin
     props.onAuthHandler(email, password, isSignin)
-    // props.history.push(`/`)
   }
 
   const checkboxHandler = ( e ) => {
@@ -36,7 +29,7 @@ const Login = ( props ) => {
     <Form 
       variant="success" 
       style={{
-        margin: '0rem 1rem 1rem 1rem', 
+        margin: '1rem 1rem 0rem 1rem', 
         padding: '.75rem 1.25rem', 
         border: '1px solid #eee', 
         borderRadius: '5px'
@@ -93,6 +86,11 @@ const Login = ( props ) => {
     <section className="Login">
       <Container>
         <Row className="justify-content-sm-center">
+          <Col xs sm= "10" md="8" lg="7" xl="6">
+            {loginForm}
+          </Col>
+        </Row>
+        <Row className="justify-content-sm-center">
           <Col xs sm="10">
             <Alert variant="success" style={{margin: '1rem'}}>
               <Alert.Heading>Добро пожаловать!</Alert.Heading>
@@ -101,15 +99,16 @@ const Login = ( props ) => {
               </p>
               <hr />
               <p className="mb-0">
-                Чтобы зарегистрироваться просто введите любой логин и пароль.
+                Чтобы зарегистрироваться просто введите любой логин и пароль (только не забудьте их).
                 Если это не первое помещение, используйте можете использовать уже созданные.
               </p>
+              <hr />
+              <p className="mb-0">
+                Так же можете использовать тестовые данные для входа: <br/>
+                <Badge variant="secondary">login:<br/></Badge> test@test.ru <br/>
+                <Badge variant="secondary">password:<br/></Badge> 123456 <br/>
+              </p>
             </Alert>
-          </Col>
-        </Row>
-        <Row className="justify-content-sm-center">
-          <Col xs sm= "10" md="8" lg="7" xl="6">
-            {loginForm}
           </Col>
         </Row>
       </Container>
@@ -118,7 +117,6 @@ const Login = ( props ) => {
 }
 
 const mapStateToProps = state => {
-  // console.log('state.login', state.login)
    return {
       isAuth: state.isAuth.isAuth,
       login: state.login.loginForm,

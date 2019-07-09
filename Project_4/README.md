@@ -1,4 +1,7 @@
-#Material-ui
+# Project_4
+
+## Project url:
+https://resume-cards.firebaseapp.com/login
 
 * install font-awesome:
  * npm i --save @fortawesome/react-fontawesome
@@ -30,3 +33,6 @@
 
 * install thunk (for middleWare)
   * npm i --save thunk
+
+
+

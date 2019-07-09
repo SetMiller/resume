@@ -13,7 +13,7 @@ const BadgeText = ( props ) => {
       <Badge variant="secondary">
         <FontAwesomeIcon icon={faArrowRight}/> 
       </Badge>
-      <span style={{marginLeft:'1.25rem'}}>{props.name}</span>
+      <span style={{marginLeft:'1.25rem', fontSize: '1.25rem'}}>{props.name}</span>
     </h5> 
   )
 }

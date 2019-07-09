@@ -7,11 +7,12 @@ export const authStart = ( ) => {
   }
 }
 
-export const authSuccess = ( idToken, userId ) => {
+export const authSuccess = ( idToken, userId, timeLeft ) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
     idToken: idToken,
     userId: userId,
+    timeLeft: timeLeft,
   }
 }
 
@@ -56,6 +57,7 @@ export const auth = ( email, password, isSignin ) => {
       .then(response => {
         // console.log('response', response)
         const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000)
+        // console.log('expirationDate', expirationDate.getTime())
         localStorage.setItem('token', response.data.idToken)
         localStorage.setItem('expirationDate', expirationDate)
         localStorage.setItem('userId', response.data.localId)

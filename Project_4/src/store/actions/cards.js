@@ -1,6 +1,5 @@
 import * as actionTypes from './actionTypes'
 import axios from '../../axios-path'
-import { CancelToken } from 'axios'
 
 // syncFunc
 export const fetchCardsStart = () => {
@@ -29,10 +28,6 @@ export const fetchCardsFail = ( error ) => {
 export const fetchCardsHandler = ( token ) => {
   return dispatch => {
     dispatch(fetchCardsStart())
-    // const source = CancelToken.source();
-    // axios.get('/cards.json', {
-    //   cancelToken: source.token
-    // })
     axios.get('/cards.json?auth=' + token)
       .then(resp => {
         const fetchCards = []
@@ -42,7 +37,6 @@ export const fetchCardsHandler = ( token ) => {
             id: key
           })
         }
-        console.log('cardsResp')
         dispatch(fetchCardsSuccess( fetchCards ))
       })
       .catch(err => dispatch(fetchCardsFail( err )))
